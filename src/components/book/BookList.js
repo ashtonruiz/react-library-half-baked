@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import Book from '../../components/book/Book';
 import { useBooks } from '../../hooks/useBooks';
+
 
 function BookList() {
   const { error, loading, books } = useBooks();
@@ -11,14 +13,21 @@ function BookList() {
     );
   if (loading) return <h1>Loading books...</h1>;
   return (
-    <ul className="book-list" aria-label="book list">
-      {books.map((book) => (
-        <li key={book.book_id}>
-          <Book book={book} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <Link to='/'>Back to home</Link>
+      <ul className="book-list" aria-label="book list">
+        {books.map((book) => (
+          <li key={book.book_id}>
+            <Link to={`/books/${book.book_id}`}>
+              <Book book={book} />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
 export default BookList;
+
+// adding a note so I can add another push so my project will re-deploy
