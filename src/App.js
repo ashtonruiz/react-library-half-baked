@@ -12,7 +12,7 @@ function App() {
   return (
     <main className="container">
       <h1>Library Catalog</h1>
-      <Link to='/'>Back to home</Link>
+      {/* <Link to='/'>Back to home</Link> */}
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/books' component={BookList} />
