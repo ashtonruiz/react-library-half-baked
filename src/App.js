@@ -13,10 +13,8 @@ function App() {
     <main className="container">
       <h1>Library Catalog</h1>
       <Switch>
-        <Route exact path='/' component={BookList} />
+        <Route exact path='/books' component={BookList} />
         <Route exact path='/books/:id' component={BookDetail} />
-        <Route exact path='/books' component={Book}/>
-        <Route exact path='/books/author' component={Author}/>
       </Switch>
     </main>
   );
